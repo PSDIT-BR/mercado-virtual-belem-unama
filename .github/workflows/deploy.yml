@@ -82,5 +82,6 @@ jobs:
           key: ${{ secrets.SSH_PASSWD }}
           port: 22
           script: |
+            sudo su
             cd /home/ubuntu/unama/
             ./deploy.sh &
