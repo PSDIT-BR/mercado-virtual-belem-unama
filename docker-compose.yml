@@ -3,7 +3,6 @@ version: '3.5'
 services:
   web:
     container_name: mercado-virtual-belem-web
-    build:
-      context: .
+    image: daniel101/mercado-virtual-belem-web
     ports:
       - "3050:80"
