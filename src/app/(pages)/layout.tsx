@@ -1,14 +1,9 @@
-import { ComponentProps } from "react";
-import { cn } from "@/lib/utils";
 import { HeaderLayout } from "@/layouts/HeaderLayout";
 
-interface LayoutProps extends ComponentProps<"div"> {}
-
-export default function Layout({ className, ...props }: LayoutProps) {
-  const classNameMerged = cn("", className);
+export default function Layout() {
 
   return (
-    <div className={classNameMerged} {...props}>
+    <div>
       <HeaderLayout />
     </div>
   );
