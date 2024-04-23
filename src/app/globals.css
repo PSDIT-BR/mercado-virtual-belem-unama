@@ -74,3 +74,22 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .active-nav {
+    background-color: rgb(248 250 252);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    
+    color: black;
+  }
+  .active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Ajuste a distância vertical conforme necessário */
+    left: 0;
+    width: 100%;
+    border-radius: var(--radius);
+    height: 3px; /* Espessura do traço */
+    background-color: black; /* Cor do traço */
+  }
+  

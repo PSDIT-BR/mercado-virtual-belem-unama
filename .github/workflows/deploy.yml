@@ -1,0 +1,51 @@
+name: Deploy ELB DEV
+
+on:
+  push:
+    branches:
+      - 'main'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Use Node 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+#      - name: Create file .env
+#        uses: 'DamianReeves/write-file-action@master'
+#        with:
+#          path: .env
+#          write-mode: overwrite
+#          contents: |
+#            VERSION=v${{ steps.package-version.outputs.current-version }}
+#            PROFILE=dev
+#            BASE_URL=https://agua-saas-api-dev.encibra.app.br/
+#            MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }}
+#            NEXT_PUBLIC_API_URI=https://agua-saas-api-dev.encibra.app.br/v1
+#            NEXTAUTH_URL=https://app.dev.al.gapus.com.br
+#            NEXTAUTH_SECRET=example-secret
+
+      - name: Install dependencies
+        run: npm i --force
+
+      - name: Build
+        run: npm run build
