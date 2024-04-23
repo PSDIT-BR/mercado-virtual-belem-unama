@@ -1,0 +1,12 @@
+/node_modules
+/src
+.eslintrc.json
+.gitignore
+components.json
+next.config.mjs
+postcss.config.mjs
+README.md
+tailwind.config.ts
+tsconfig.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+  web:
+    container_name: mercado-virtual-belem-web
+    build:
+      context: .
+    ports:
+      - "3050:80"
