@@ -1,4 +1,4 @@
-npm run build
+pnpm build
 
 docker image build --platform=linux/amd64 -t daniel101/mercado-virtual-belem-web .
 
