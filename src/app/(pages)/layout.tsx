@@ -6,7 +6,7 @@ interface LayoutProps {
 }
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="relative">
+    <div className="relative px-24">
       <HeaderLayout className="z-50" />
       <div>{children}</div>
     </div>

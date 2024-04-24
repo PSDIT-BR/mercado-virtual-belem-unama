@@ -29,7 +29,7 @@ export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
   }, [pathName]);
 
   const classNameMerged = cn(
-    "relative  flex items-center justify-between h-24 w-full  px-28 rounded-md",
+    "relative  flex items-center justify-between h-24 w-full  rounded-md",
     className
   );
 
