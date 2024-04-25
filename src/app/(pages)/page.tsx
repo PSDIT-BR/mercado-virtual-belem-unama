@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div className=" w-full">
       <div className="flex items-center justify-center mt-4 h-fit">
-        <h1 className="font-medium absolute z-50 border-2 px-24 text-[6rem] text-white">
+        <h1 className="font-medium absolute z-30 border-2 px-24 text-[6rem] text-white">
           VER-O-PESO
         </h1>
         <Image

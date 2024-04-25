@@ -3,10 +3,10 @@ import { ComponentProps, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { SearchInput } from "@/components/Search";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { FaCar, FaCartArrowDown, FaCartPlus } from "react-icons/fa";
+import { Login } from "@/components/Login";
+import { Cart } from "@/components/Cart";
 
 interface HeaderLayoutProps extends ComponentProps<"div"> {}
 
@@ -25,12 +25,34 @@ export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
 
   const [currentRouter, setCurrentRouter] = useState(`/`);
 
+  const [scrollY, setScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
   useEffect(() => {
     setCurrentRouter(pathName);
   }, [pathName]);
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setIsScrolled(scrollY > 130);
+  }, [scrollY]);
+
+
   const classNameMerged = cn(
-    "relative  flex items-center justify-between h-24 w-full  rounded-md",
+    "relative  flex items-center justify-between h-20 w-full transition-all duration-300 ease-in-out rounded-md",
+    isScrolled && "fixed px-24 top-0 left-0 z-50 w-full z-50 bg-green-400 text-green-900 shadow-md",
     className
   );
 
@@ -58,15 +80,10 @@ export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
           ))}
         </nav>
         <div>
-          <Button className="hover:opacity-80">Fazer Login</Button>
+          <Login />
         </div>
         <div className="relative">
-          <div className="p-3 bg-gray-50 rounded-lg cursor-pointer">
-            <FaCartPlus size={20} />
-          </div>
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
-            {2}
-          </span>
+          <Cart />
         </div>
       </div>
     </div>
