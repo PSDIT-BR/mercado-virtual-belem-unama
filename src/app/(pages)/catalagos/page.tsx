@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -15,7 +16,7 @@ export default function Page() {
       <div className="space-y-10 mt-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="w-full" key={index}>
+            <Card className="w-full cursor-pointer" key={index}>
               <CardHeader>
                 <CardTitle>Estação das Docas</CardTitle>
               </CardHeader>
@@ -49,7 +50,7 @@ export default function Page() {
                     R$ 100,00
                   </h2>
                   <p className="text-sm text-center">Até 5x de <strong>R$25,00</strong> sem juros</p>
-
+                  <Button className="w-full mt-2 bg-green-600 hover:bg-green-500">Adicionar no Carrinho</Button>
                   <CardDescription className="mt-4">
                     A Estação das Docas é um complexo turístico, gastronômico e
                     cultural localizado em Belém, capital do estado do Pará,
