@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface WhatsappFloatProps extends ComponentProps<"div"> {}
 
@@ -19,11 +20,9 @@ export function WhatsappFloat({ className, ...props }: WhatsappFloatProps) {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger className="bg-green-500 p-3 text-white rounded-full">
-            <FaWhatsapp
-              
-              color="white"
-              size={30}
-            />
+            <Link href="https://wa.link/uv4ico" target="_blank">
+              <FaWhatsapp color="white" size={30} />
+            </Link>
           </TooltipTrigger>
           <TooltipContent>Comprar por Whatsapp</TooltipContent>
         </Tooltip>

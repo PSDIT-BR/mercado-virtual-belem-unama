@@ -3,7 +3,7 @@ import { ComponentProps, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { SearchInput } from "@/components/Search";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Login } from "@/components/Login";
 import { Cart } from "@/components/Cart";
@@ -22,6 +22,7 @@ const menuItems = [
 ];
 export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
   const pathName = usePathname();
+  const router = useRouter()
 
   const [currentRouter, setCurrentRouter] = useState(`/`);
 
@@ -58,7 +59,7 @@ export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
 
   return (
     <div className={classNameMerged} {...props}>
-      <div className="flex gap-4 items-center">
+      <div onClick={() => router.replace("/")} className="flex gap-4 items-center cursor-pointer">
         <Image src="/logo.png" alt="Logo" width={50} height={50} />
         Mercado Virtual de Belém
       </div>
