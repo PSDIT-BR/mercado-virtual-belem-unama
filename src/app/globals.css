@@ -76,7 +76,7 @@
   }
 
   .active-nav {
-    background-color: rgb(248 250 252);
+    background-color: rgb(241 245 249 / 0.4);
     padding: 0.5rem 1rem;
     border-radius: var(--radius);
     
@@ -85,7 +85,7 @@
   .active-nav::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Ajuste a distância vertical conforme necessário */
+    bottom: -9px; /* Ajuste a distância vertical conforme necessário */
     left: 0;
     width: 100%;
     border-radius: var(--radius);

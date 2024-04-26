@@ -72,7 +72,7 @@ export function HeaderLayout({ className, ...props }: HeaderLayoutProps) {
             <Link
               key={href}
               href={href}
-              className={`cursor-pointer hover:bg-slate-50 px-4 py-2 rounded-lg relative ${
+              className={`cursor-pointer hover:bg-slate-100/40 px-4 py-2 rounded-lg relative ${
                 currentRouter === href ? "active-nav" : ""
               }`}
             >
