@@ -147,7 +147,7 @@ export default function Page() {
       <div className="mt-24">
         <div>
           <h1 className="font-medium text-4xl">Avaliações</h1>
-          <p className="text-lg">Produtos</p>
+          <p className="text-lg">Loja</p>
         </div>
 
         <div className="flex items-center gap-4 mt-4">

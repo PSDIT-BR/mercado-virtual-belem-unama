@@ -9,7 +9,6 @@ interface LayoutProps {
 }
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div>
       <SomeDesktop>
         <div className="py-2 w-full bg-green-300 flex items-center justify-center">
           Bem-vindo ao melhor catálago de produtos do{" "}
@@ -23,6 +22,5 @@ export default function Layout({ children }: LayoutProps) {
           <WhatsappFloat />
         </div>
       </SomeDesktop>
-    </div>
   );
 }
