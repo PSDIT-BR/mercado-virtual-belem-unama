@@ -25,7 +25,7 @@ export function SomeDesktop({
         <GoAlert className="text-red-500 text-6xl mx-auto mb-4" />
         <h1 className="text-red-500 text-2xl font-bold mb-2">Oops!</h1>
         <p className="text-white text-lg">
-          Esta página só está disponível em dispositivos desktop.
+          Esta página só está disponível em dispositivos desktop. (1280px)
         </p>
       </div>
     );
